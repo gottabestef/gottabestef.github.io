@@ -1,150 +1,534 @@
+```html
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
-    <title>Prestasi PERBASI</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Berita 2 - PJJ akibat Abu Vulkanik</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --pink: #C8B6FF;
+    --blue: #9BE7FF;
+    --yellow: #D9FF70;
+    --purple: #A9A0D8;
+    --black: #29283D;
+    --white: #F7F7FF;
+    --lavender: #F0ECFF;
+    --ice: #E5F8FF;
+    --muted: #7770A8;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 35px 16px;
+    color: var(--black);
+    font-family: "Space Grotesk", Arial, sans-serif;
+    background-color: #B9B1E8;
+    background-image:
+        radial-gradient(circle, #F7F7FF 0 5px, transparent 6px),
+        radial-gradient(circle, #91DDF2 0 5px, transparent 6px),
+        repeating-linear-gradient(
+            45deg,
+            transparent 0 30px,
+            rgba(41, 40, 61, 0.08) 31px 34px,
+            transparent 35px 60px
+        );
+    background-size: 75px 75px, 100px 100px, 100% 100%;
+    background-attachment: fixed;
+}
+
+.site-wrapper {
+    width: 100%;
+    max-width: 1050px;
+    margin: auto;
+    overflow: hidden;
+    background: var(--white);
+    border: 4px solid var(--black);
+    border-radius: 18px;
+    box-shadow: 10px 10px 0 var(--black),
+                15px 15px 0 var(--yellow);
+}
+
+.ticker {
+    padding: 10px;
+    text-align: center;
+    background: var(--yellow);
+    border-bottom: 4px solid var(--black);
+    font-family: "Archivo Black", sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.header {
+    padding: 38px 20px;
+    text-align: center;
+    background-color: #B9A7F5;
+    background-image:
+        radial-gradient(circle, #F7F7FF 0 4px, transparent 5px),
+        linear-gradient(135deg, #C8B6FF, #8DDCF5, #A9A0D8);
+    background-size: 55px 55px, cover;
+    border-bottom: 6px double var(--yellow);
+}
+
+.eyebrow {
+    display: inline-block;
+    padding: 7px 12px;
+    background: var(--yellow);
+    border: 3px solid var(--black);
+    border-radius: 5px;
+    box-shadow: 3px 3px 0 var(--black);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.header h1 {
+    margin: 18px 0 12px;
+    color: var(--white);
+    font-family: "Archivo Black", sans-serif;
+    font-size: clamp(36px, 7vw, 62px);
+    text-transform: uppercase;
+    -webkit-text-stroke: 1px var(--black);
+    text-shadow: 4px 4px 0 var(--muted),
+                 7px 7px 0 var(--black);
+}
+
+.header p {
+    display: inline-block;
+    padding: 8px 13px;
+    background: var(--white);
+    border: 3px solid var(--black);
+    border-radius: 7px;
+    font-weight: 700;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px;
+    background: var(--blue);
+    border-bottom: 4px solid var(--black);
+}
+
+nav a {
+    padding: 9px 13px;
+    color: var(--black);
+    background: var(--white);
+    border: 2px solid var(--black);
+    border-radius: 5px;
+    box-shadow: 3px 3px 0 var(--black);
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+nav a:hover,
+nav a.active {
+    background: var(--yellow);
+    transform: translateY(-2px);
+}
+
+.content {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(220px, 1fr);
+    gap: 20px;
+    padding: 22px;
+}
+
+.section-label {
+    display: inline-block;
+    margin-bottom: 14px;
+    padding: 6px 10px;
+    background: var(--yellow);
+    border: 2px solid var(--black);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.article {
+    overflow: hidden;
+    background: white;
+    border: 3px solid var(--black);
+    border-radius: 10px;
+    box-shadow: 5px 5px 0 var(--black);
+}
+
+.article-top {
+    padding: 22px;
+    background: linear-gradient(135deg, var(--pink), var(--blue));
+    border-bottom: 3px solid var(--black);
+}
+
+.article-top h2 {
+    margin: 12px 0;
+    font-family: "Archivo Black", sans-serif;
+    font-size: clamp(23px, 4vw, 34px);
+    line-height: 1.3;
+}
+
+.meta {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.hero-card {
+    position: relative;
+    display: flex;
+    min-height: 230px;
+    margin-bottom: 22px;
+    padding: 25px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    text-align: center;
+    background:
+        radial-gradient(circle, rgba(247,247,255,.9) 0 4px, transparent 5px),
+        linear-gradient(135deg, #C8B6FF, #9BE7FF, #D9FF70);
+    background-size: 45px 45px, cover;
+    border: 3px solid var(--black);
+    border-radius: 8px;
+}
+
+.hero-card .small-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.hero-card h3 {
+    margin: 14px 0;
+    font-family: "Archivo Black", sans-serif;
+    font-size: clamp(28px, 5vw, 44px);
+    line-height: 1.2;
+    text-shadow: 3px 3px 0 var(--white);
+}
+
+.hero-card .date {
+    display: inline-block;
+    padding: 7px 12px;
+    background: var(--white);
+    border: 2px solid var(--black);
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.article-body {
+    padding: 22px;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.article-body p {
+    margin: 0 0 16px;
+}
+
+.highlight {
+    margin: 20px 0;
+    padding: 16px;
+    background: var(--ice);
+    border-left: 5px solid var(--muted);
+}
+
+.info-card {
+    margin-top: 22px;
+    padding: 18px;
+    background: var(--lavender);
+    border: 3px solid var(--black);
+    border-radius: 8px;
+    box-shadow: 4px 4px 0 var(--pink);
+}
+
+.info-card h3 {
+    margin: 0 0 12px;
+    font-family: "Archivo Black", sans-serif;
+    font-size: 18px;
+}
+
+.info-card ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.info-card li {
+    margin-bottom: 7px;
+}
+
+.sidebar-box {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: var(--white);
+    border: 3px solid var(--black);
+    border-radius: 9px;
+    box-shadow: 4px 4px 0 var(--black);
+}
+
+.sidebar-box h3 {
+    margin: 0 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 3px dashed var(--purple);
+    font-family: "Archivo Black", sans-serif;
+    font-size: 16px;
+}
+
+.sidebar-box p,
+.sidebar-box li {
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.sidebar-box ul {
+    padding-left: 18px;
+}
+
+.sticker {
+    padding: 18px 10px;
+    text-align: center;
+    background: var(--yellow);
+    border: 3px solid var(--black);
+    border-radius: 8px;
+    box-shadow: 4px 4px 0 var(--black);
+}
+
+.sticker strong {
+    display: block;
+    margin-bottom: 8px;
+    font-family: "Archivo Black", sans-serif;
+}
+
+.sticker p {
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.article-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: space-between;
+    margin-top: 24px;
+}
+
+.article-links a {
+    display: inline-block;
+    padding: 10px 13px;
+    color: var(--black);
+    background: var(--yellow);
+    border: 2px solid var(--black);
+    border-radius: 5px;
+    box-shadow: 3px 3px 0 var(--black);
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.article-links a:hover {
+    background: var(--blue);
+}
+
+footer {
+    padding: 20px 12px;
+    text-align: center;
+    background: var(--pink);
+    border-top: 4px solid var(--black);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+footer p {
+    margin: 5px;
+}
+
+@media (max-width: 700px) {
+    body {
+        padding: 18px 10px;
+    }
+
+    .content {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+
+    .article-body {
+        padding: 16px;
+    }
+}
+</style>
 </head>
 
-<body bgcolor="#e8f1f8">
+<body>
 
-<table border="1" width="800px" cellpadding="12px" align="center" bgcolor="white">
+<div class="site-wrapper">
 
-<tr>
+    <div class="ticker">
+        ★ SCHOOL NEWS ★ LEARNING UPDATE ★
+    </div>
 
-<td colspan="2" align="center" bgcolor="#5b7c99">
+    <header class="header">
+        <span class="eyebrow">MY PERSONAL WEBSITE</span>
+        <h1>BERITA 02</h1>
+        <p>Informasi Kegiatan Sekolah</p>
+    </header>
 
-<font color="white">
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="tentangsaya.html">TENTANG SAYA</a>
+        <a href="sekolahku.html">SEKOLAHKU</a>
+        <a href="syair.html">SYAIR LAGU</a>
+        <a href="berita1.html">BERITA 1</a>
+        <a href="berita2.html" class="active">BERITA 2</a>
+    </nav>
 
-<p>&nbsp;</p>
+    <main class="content">
 
-<h1>Prestasi PERBASI</h1>
+        <section>
+            <span class="section-label">SCHOOL NEWS / 02</span>
 
-<p><em>SMKN 1 Tangerang</em></p>
+            <article class="article">
 
-<p>&nbsp;</p>
+                <div class="article-top">
+                    <span class="eyebrow">SCHOOL UPDATE</span>
 
-</font>
+                    <h2>Pembelajaran Jarak Jauh akibat Abu Vulkanik</h2>
 
-</td>
+                    <div class="meta">
+                        SEPTEMBER 2026 · SMKN 1 TANGERANG
+                    </div>
+                </div>
 
-</tr>
+                <div class="article-body">
 
-<tr>
+                    <div class="hero-card">
+                        <span class="small-title">LEARNING UPDATE / 2026</span>
+                        <h3>LEARNING<br>FROM HOME</h3>
+                        <span class="date">7–11 SEPTEMBER 2026</span>
+                    </div>
 
-<td colspan="2" bgcolor="#c9dff0">
+                    <p>
+                        SMKN 1 Tangerang melaksanakan
+                        <strong>Pembelajaran Jarak Jauh (PJJ)</strong>
+                        pada tanggal <strong>7–11 September 2026</strong>
+                        akibat kondisi abu vulkanik. Kebijakan ini membuat
+                        siswa mengikuti kegiatan pembelajaran dari tempat
+                        masing-masing.
+                    </p>
 
-<a href="index.html">Beranda</a> |
-<a href="tentangsaya.html">Tentang Saya</a> |
-<a href="sekolahku.html">Sekolahku</a> |
-<a href="syair.html">Syair Lagu</a> |
-<a href="berita1.html">Berita 1</a> |
-<a href="berita2.html">Berita 2</a> |
-    
-</td>
+                    <p>
+                        Selama PJJ berlangsung, siswa mengikuti
+                        pembelajaran secara daring dengan mempelajari
+                        materi dan mengerjakan tugas yang diberikan oleh
+                        guru. Kegiatan belajar tetap dilaksanakan sesuai
+                        jadwal yang telah ditentukan.
+                    </p>
 
-</tr>
+                    <div class="highlight">
+                        Meskipun pembelajaran dilakukan dari jarak jauh,
+                        siswa tetap diharapkan mengikuti kegiatan dengan
+                        disiplin, menyelesaikan tugas, dan mengumpulkannya
+                        sesuai ketentuan yang diberikan.
+                    </div>
 
-<tr>
+                    <div class="info-card">
+                        <h3>Pelaksanaan PJJ</h3>
 
-<td width="75%">
+                        <ul>
+                            <li>
+                                <strong>Tanggal:</strong>
+                                7–11 September 2026
+                            </li>
+                            <li>
+                                <strong>Penyebab:</strong>
+                                Kondisi abu vulkanik
+                            </li>
+                            <li>
+                                <strong>Metode:</strong>
+                                Pembelajaran Jarak Jauh
+                            </li>
+                            <li>
+                                <strong>Kegiatan:</strong>
+                                Pembelajaran daring dan pengerjaan tugas
+                            </li>
+                        </ul>
+                    </div>
 
-<h2>Juara 3 Putri Basket pada Kompetisi PERBASI</h2>
+                    <div class="article-links">
+                        <a href="berita1.html">← BERITA SEBELUMNYA</a>
+                        <a href="index.html">KEMBALI KE HOME</a>
+                    </div>
 
-<p align="right">
-<small><em>September 2026</em></small>
-</p>
+                </div>
+            </article>
+        </section>
 
-<p>
-Tim basket putri SMKN 1 Tangerang berhasil meraih
-<strong>Juara 3</strong> dalam kompetisi basket yang diselenggarakan
-oleh PERBASI.
-</p>
+        <aside>
 
-<p>
-Prestasi tersebut menjadi salah satu pencapaian yang membanggakan
-bagi sekolah. Para pemain menunjukkan kerja sama, semangat, dan
-perjuangan selama mengikuti pertandingan.
-</p>
+            <div class="sidebar-box">
+                <h3>INFO BERITA</h3>
 
-<p>
-Keberhasilan ini juga menjadi hasil dari latihan dan kerja sama
-tim yang dilakukan sebelum pertandingan. Dukungan dari sekolah,
-pelatih, dan teman-teman turut memberikan semangat kepada para
-pemain.
-</p>
+                <p>
+                    <strong>Topik</strong><br>
+                    Pembelajaran Jarak Jauh
+                </p>
 
-<h3>Pencapaian</h3>
+                <p>
+                    <strong>Periode</strong><br>
+                    7–11 September 2026
+                </p>
 
-<ul>
+                <p>
+                    <strong>Penyebab</strong><br>
+                    Kondisi abu vulkanik
+                </p>
 
-<li>Kompetisi basket PERBASI</li>
+                <p>
+                    <strong>Sekolah</strong><br>
+                    SMKN 1 Tangerang
+                </p>
+            </div>
 
-<li>Kategori putri</li>
+            <div class="sidebar-box">
+                <h3>KEGIATAN PJJ</h3>
 
-<li>Meraih Juara 3</li>
+                <ul>
+                    <li>Mengikuti pembelajaran daring.</li>
+                    <li>Mempelajari materi dari guru.</li>
+                    <li>Mengerjakan tugas yang diberikan.</li>
+                    <li>Mengumpulkan tugas sesuai ketentuan.</li>
+                </ul>
+            </div>
 
-<li>Membawa nama SMKN 1 Tangerang</li>
+            <div class="sticker">
+                <strong>KEEP LEARNING!</strong>
+                <p>
+                    Tetap belajar dan semangat
+                    meskipun dari jarak jauh.
+                </p>
+            </div>
 
-</ul>
+        </aside>
 
-<p>
-<a href="berita-2.html">Baca Berita Selanjutnya</a>
-</p>
+    </main>
 
-<p>
-<a href="../index.html">Kembali ke Beranda</a>
-</p>
+    <footer>
+        <p>© 2026 STEFANIE ODELIA AKAY</p>
+        <p>MADE WITH CREATIVITY & PIXEL MAGIC</p>
+    </footer>
 
-</td>
-
-<td width="25%" valign="top" bgcolor="#edf2f5">
-
-<p><strong>Berita Lain</strong></p>
-
-<p>
-<a href="berita-2.html">PJJ 7–11 September 2026</a>
-</p>
-
-<hr>
-
-<p><strong>Menu</strong></p>
-
-<a href="../index.html">Beranda</a>
-
-<br><br>
-
-<a href="../tentang-saya.html">Tentang Saya</a>
-
-<br><br>
-
-<a href="../sekolahku.html">Sekolahku</a>
-
-<br><br>
-
-<a href="../syair-lagu.html">Syair Lagu</a>
-
-</td>
-
-</tr>
-
-<tr>
-
-<td colspan="2" align="right" bgcolor="#354b5e">
-
-<font color="white">
-
-<small>
-&copy; 2026 Stefanie Odelia Akay
-</small>
-
-</font>
-
-</td>
-
-</tr>
-
-</table>
+</div>
 
 </body>
-
 </html>
+```
