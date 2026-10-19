@@ -1,478 +1,609 @@
-```html
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sekolahku ★ Y2K Chrome</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Stefanie ★ Y2K Chrome</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<style>
-:root {
-    --pink: #C8B6FF;
-    --blue: #9BE7FF;
-    --yellow: #D9FF70;
-    --purple: #A9A0D8;
-    --black: #29283D;
-    --white: #F7F7FF;
-    --lavender: #F0ECFF;
-    --ice: #E5F8FF;
-    --muted: #7770A8;
-}
+    <style>
+        :root {
+            --pink: #C8B6FF;
+            --blue: #9BE7FF;
+            --yellow: #D9FF70;
+            --purple: #A9A0D8;
+            --black: #29283D;
+            --white: #F7F7FF;
+            --lavender: #F0ECFF;
+            --ice: #E5F8FF;
+            --muted: #7770A8;
+        }
 
-* { box-sizing: border-box; }
+        * {
+            box-sizing: border-box;
+        }
 
-html { scroll-behavior: smooth; }
+        html {
+            scroll-behavior: smooth;
+        }
 
-body {
-    margin: 0;
-    padding: 35px 16px;
-    color: var(--black);
-    font-family: "Space Grotesk", Arial, sans-serif;
-    background-color: #B9B1E8;
-    background-image:
-        radial-gradient(circle, #F7F7FF 0 5px, transparent 6px),
-        radial-gradient(circle, #91DDF2 0 5px, transparent 6px),
-        repeating-linear-gradient(45deg, transparent 0 30px,
-        rgba(41,40,61,.08) 31px 34px, transparent 35px 60px);
-    background-size: 75px 75px, 100px 100px, 100% 100%;
-    background-attachment: fixed;
-}
+        body {
+            margin: 0;
+            padding: 35px 16px;
+            color: var(--black);
+            font-family: "Space Grotesk", Arial, sans-serif;
+            background-color: #B9B1E8;
+            background-image:
+                radial-gradient(circle, #F7F7FF 0 5px, transparent 6px),
+                radial-gradient(circle, #91DDF2 0 5px, transparent 6px),
+                repeating-linear-gradient(
+                    45deg,
+                    transparent 0 30px,
+                    rgba(41, 40, 61, 0.08) 31px 34px,
+                    transparent 35px 60px
+                );
+            background-size: 75px 75px, 100px 100px, 100% 100%;
+            background-attachment: fixed;
+        }
 
-a { color: inherit; text-decoration: none; }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
 
-.site-wrapper {
-    width: 100%;
-    max-width: 1050px;
-    margin: auto;
-    overflow: hidden;
-    background: var(--white);
-    border: 4px solid var(--black);
-    border-radius: 18px;
-    box-shadow: 10px 10px 0 var(--black), 15px 15px 0 var(--yellow);
-}
+        /* KOTAK UTAMA */
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    border-spacing: 0;
-    table-layout: fixed;
-}
+        .site-wrapper {
+            width: 100%;
+            max-width: 1050px;
+            margin: auto;
+            overflow: hidden;
+            background: var(--white);
+            border: 4px solid var(--black);
+            border-radius: 18px;
+            box-shadow:
+                10px 10px 0 var(--black),
+                15px 15px 0 var(--yellow);
+        }
 
-td { padding: 0; vertical-align: top; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+            table-layout: fixed;
+        }
 
-.ticker {
-    padding: 10px;
-    background: var(--yellow);
-    border-bottom: 4px solid var(--black);
-    font-family: "Archivo Black", sans-serif;
-    font-size: 11px;
-    letter-spacing: 2px;
-    text-align: center;
-}
+        td {
+            padding: 0;
+            vertical-align: top;
+        }
 
-.header {
-    position: relative;
-    overflow: hidden;
-    padding: 43px 20px;
-    color: var(--white);
-    text-align: center;
-    background-color: #B9A7F5;
-    background-image:
-        radial-gradient(circle, #F7F7FF 0 4px, transparent 5px),
-        linear-gradient(135deg, #C8B6FF, #8DDCF5, #A9A0D8);
-    background-size: 55px 55px, cover;
-    border-bottom: 6px double var(--yellow);
-}
+        /* TOP TICKER */
 
-.header::before {
-    content: "★";
-    position: absolute;
-    top: 12px;
-    left: 7%;
-    color: var(--yellow);
-    font-size: 60px;
-    text-shadow: 4px 4px 0 var(--black);
-    transform: rotate(-15deg);
-}
+        .ticker {
+            padding: 10px;
+            color: var(--black);
+            background: var(--yellow);
+            border-bottom: 4px solid var(--black);
+            font-family: "Archivo Black", sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-align: center;
+        }
 
-.header::after {
-    content: "✦";
-    position: absolute;
-    right: 7%;
-    bottom: 5px;
-    color: var(--blue);
-    font-size: 75px;
-    text-shadow: 4px 4px 0 var(--black);
-    transform: rotate(15deg);
-}
+        /* HEADER */
 
-.eyebrow {
-    position: relative;
-    z-index: 1;
-    display: inline-block;
-    padding: 7px 13px;
-    color: var(--black);
-    background: var(--yellow);
-    border: 3px solid var(--black);
-    border-radius: 5px;
-    box-shadow: 4px 4px 0 var(--black);
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    transform: rotate(-2deg);
-}
+        .header {
+            position: relative;
+            overflow: hidden;
+            padding: 43px 20px;
+            color: var(--white);
+            text-align: center;
+            background-color: #B9A7F5;
+            background-image:
+                radial-gradient(circle, #F7F7FF 0 4px, transparent 5px),
+                linear-gradient(135deg, #C8B6FF, #8DDCF5, #A9A0D8);
+            background-size: 55px 55px, cover;
+            border-bottom: 6px double var(--yellow);
+        }
 
-.header h1 {
-    position: relative;
-    z-index: 1;
-    margin: 20px 0 10px;
-    color: var(--white);
-    font-family: "Archivo Black", Impact, sans-serif;
-    font-size: clamp(36px, 7vw, 65px);
-    line-height: 1.15;
-    letter-spacing: -1px;
-    text-transform: uppercase;
-    -webkit-text-stroke: 1px var(--black);
-    text-shadow: 3px 3px 0 var(--muted),
-                 5px 5px 0 var(--black),
-                 8px 8px 0 var(--blue);
-}
+        .header::before {
+            content: "★";
+            position: absolute;
+            top: 12px;
+            left: 7%;
+            color: var(--yellow);
+            font-size: 60px;
+            text-shadow: 4px 4px 0 var(--black);
+            transform: rotate(-15deg);
+        }
 
-.header p {
-    position: relative;
-    z-index: 1;
-    display: inline-block;
-    margin: 8px 0 0;
-    padding: 9px 14px;
-    color: var(--black);
-    background: var(--white);
-    border: 3px solid var(--black);
-    border-radius: 7px;
-    box-shadow: 4px 4px 0 var(--black);
-    font-size: 13px;
-    font-weight: 700;
-    transform: rotate(1deg);
-}
+        .header::after {
+            content: "✦";
+            position: absolute;
+            right: 7%;
+            bottom: 5px;
+            color: var(--blue);
+            font-size: 75px;
+            text-shadow: 4px 4px 0 var(--black);
+            transform: rotate(15deg);
+        }
 
-.navbar {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 17px 12px;
-    background: var(--yellow);
-    border-bottom: 4px solid var(--black);
-}
+        .eyebrow {
+            position: relative;
+            z-index: 1;
+            display: inline-block;
+            padding: 7px 13px;
+            color: var(--black);
+            background: var(--yellow);
+            border: 3px solid var(--black);
+            border-radius: 5px;
+            box-shadow: 4px 4px 0 var(--black);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            transform: rotate(-2deg);
+        }
 
-.navbar a {
-    display: inline-block;
-    padding: 10px 13px;
-    color: var(--black);
-    background: var(--white);
-    border: 3px solid var(--muted);
-    border-radius: 6px;
-    box-shadow: 4px 4px 0 var(--black);
-    font-size: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    transition: .2s ease;
-}
+        .header h1 {
+            position: relative;
+            z-index: 1;
+            margin: 20px 0 10px;
+            color: var(--white);
+            font-family: "Archivo Black", Impact, sans-serif;
+            font-size: clamp(36px, 7vw, 65px);
+            line-height: 1.15;
+            letter-spacing: -1px;
+            text-transform: uppercase;
+            -webkit-text-stroke: 1px var(--black);
+            text-shadow:
+                3px 3px 0 var(--muted),
+                5px 5px 0 var(--black),
+                8px 8px 0 var(--blue);
+        }
 
-.navbar a:hover,
-.navbar a.active {
-    color: var(--white);
-    background: var(--purple);
-    transform: translate(3px, 3px);
-    box-shadow: 1px 1px 0 var(--black);
-}
+        .header p {
+            position: relative;
+            z-index: 1;
+            display: inline-block;
+            margin: 8px 0 0;
+            padding: 9px 14px;
+            color: var(--black);
+            background: var(--white);
+            border: 3px solid var(--black);
+            border-radius: 7px;
+            box-shadow: 4px 4px 0 var(--black);
+            font-size: 13px;
+            font-weight: 700;
+            transform: rotate(1deg);
+        }
 
-.mini-banner {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 12px;
-    color: var(--yellow);
-    background: var(--black);
-    font-family: "Archivo Black", sans-serif;
-    font-size: 10px;
-    letter-spacing: 1px;
-    text-align: center;
-}
+        /* NAVIGASI */
 
-.mini-banner span:nth-child(2) { color: var(--pink); }
-.mini-banner span:nth-child(3) { color: var(--blue); }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 17px 12px;
+            background: var(--yellow);
+            border-bottom: 4px solid var(--black);
+        }
 
-.layout-row { display: table-row; }
+        .navbar a {
+            display: inline-block;
+            padding: 10px 13px;
+            color: var(--black);
+            background: var(--white);
+            border: 3px solid var(--muted);
+            border-radius: 6px;
+            box-shadow: 4px 4px 0 var(--black);
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: .2s ease;
+        }
 
-.content {
-    width: 75%;
-    padding: 26px;
-    background: var(--white);
-    line-height: 1.8;
-}
+        .navbar a:hover,
+        .navbar a.active {
+            color: var(--white);
+            background: var(--purple);
+            transform: translate(3px, 3px);
+            box-shadow: 1px 1px 0 var(--black);
+        }
 
-.content h2 {
-    margin: 5px 0 22px;
-    padding-bottom: 12px;
-    color: var(--muted);
-    border-bottom: 4px solid var(--blue);
-    font-family: "Archivo Black", sans-serif;
-    font-size: 24px;
-    text-transform: uppercase;
-}
+        /* BANNER */
 
-.heading-label {
-    display: inline-block;
-    margin-left: 5px;
-    padding: 5px 8px;
-    vertical-align: middle;
-    color: var(--black);
-    background: var(--yellow);
-    border: 2px solid var(--black);
-    border-radius: 4px;
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 10px;
-}
+        .mini-banner {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 12px;
+            color: var(--yellow);
+            background: var(--black);
+            font-family: "Archivo Black", sans-serif;
+            font-size: 10px;
+            letter-spacing: 1px;
+            text-align: center;
+        }
 
-.content h3 { color: var(--muted); }
-.content > p { font-size: 14px; }
+        .mini-banner span:nth-child(2) {
+            color: var(--pink);
+        }
 
-hr {
-    margin: 28px 0;
-    border: none;
-    border-top: 3px dashed var(--purple);
-}
+        .mini-banner span:nth-child(3) {
+            color: var(--blue);
+        }
 
-.school-banner {
-    margin: 0 5px 27px 0;
-    padding: 25px 18px;
-    text-align: center;
-    background: var(--lavender);
-    border: 3px solid var(--black);
-    border-radius: 12px;
-    box-shadow: 6px 6px 0 var(--blue);
-}
+        /* LAYOUT KONTEN */
 
-.school-symbol {
-    display: flex;
-    width: 105px;
-    height: 105px;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 18px;
-    background: var(--yellow);
-    border: 4px solid var(--black);
-    border-radius: 50%;
-    box-shadow: 4px 4px 0 var(--purple);
-    font-family: "Archivo Black", sans-serif;
-    font-size: 27px;
-}
+        .layout-row {
+            display: table-row;
+        }
 
-.school-banner h3 {
-    margin: 0 0 10px;
-    color: var(--black);
-    font-family: "Archivo Black", sans-serif;
-    font-size: 21px;
-    line-height: 1.5;
-}
+        .content {
+            width: 75%;
+            padding: 26px;
+            background: var(--white);
+            line-height: 1.8;
+        }
 
-.school-banner p {
-    margin: 0;
-    font-size: 13px;
-}
+        .content h2 {
+            margin: 5px 0 22px;
+            padding-bottom: 12px;
+            color: var(--muted);
+            border-bottom: 4px solid var(--blue);
+            font-family: "Archivo Black", sans-serif;
+            font-size: 24px;
+            text-transform: uppercase;
+        }
 
-.info-card {
-    margin: 0 5px 24px 0;
-    padding: 20px;
-    background: var(--ice);
-    border: 3px solid var(--black);
-    border-radius: 12px;
-    box-shadow: 6px 6px 0 var(--purple);
-}
+        .heading-label {
+            display: inline-block;
+            margin-left: 5px;
+            padding: 5px 8px;
+            vertical-align: middle;
+            color: var(--black);
+            background: var(--yellow);
+            border: 2px solid var(--black);
+            border-radius: 4px;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 10px;
+        }
 
-.info-card:nth-of-type(even) {
-    background: var(--lavender);
-    box-shadow: 6px 6px 0 var(--blue);
-}
+        .content h3 {
+            color: var(--muted);
+        }
 
-.info-card h3 {
-    margin-top: 0;
-    color: var(--black);
-    font-family: "Archivo Black", sans-serif;
-    font-size: 17px;
-}
+        .content > p {
+            font-size: 14px;
+        }
 
-.info-card p {
-    margin-bottom: 0;
-    font-size: 14px;
-}
+        .content a {
+            color: var(--muted);
+        }
 
-.fact-list {
-    padding-left: 20px;
-    font-size: 14px;
-}
+        .content a:hover {
+            color: #648C29;
+        }
 
-.fact-list li { margin-bottom: 8px; }
+        hr {
+            margin: 28px 0;
+            border: none;
+            border-top: 3px dashed var(--purple);
+        }
 
-.highlight-card {
-    margin: 25px 5px 10px 0;
-    padding: 20px;
-    background: var(--yellow);
-    border: 3px solid var(--black);
-    border-radius: 10px;
-    box-shadow: 5px 5px 0 var(--blue);
-}
+        /* KARTU BERITA */
 
-.highlight-card h3 {
-    margin-top: 0;
-    color: var(--black);
-    font-family: "Archivo Black", sans-serif;
-}
+        .news-card {
+            position: relative;
+            margin: 0 5px 28px 0;
+            padding: 21px;
+            background: var(--lavender);
+            border: 3px solid var(--black);
+            border-radius: 12px;
+            box-shadow: 6px 6px 0 var(--blue);
+            transition: .2s ease;
+        }
 
-.highlight-card p {
-    margin-bottom: 0;
-    font-size: 13px;
-}
+        .news-card:nth-of-type(even) {
+            background: var(--ice);
+            box-shadow: 6px 6px 0 var(--purple);
+        }
 
-.sidebar {
-    width: 25%;
-    padding: 19px;
-    background: var(--ice);
-    border-left: 4px double var(--purple);
-    line-height: 1.7;
-    overflow-wrap: anywhere;
-}
+        .news-card:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 10px 10px 0 var(--blue);
+        }
 
-.side-box {
-    margin-bottom: 22px;
-    padding: 15px;
-    background: var(--yellow);
-    border: 3px solid var(--black);
-    border-radius: 10px;
-    box-shadow: 5px 5px 0 var(--purple);
-}
+        .sticker {
+            position: absolute;
+            top: -14px;
+            right: 13px;
+            padding: 5px 10px;
+            color: var(--black);
+            background: var(--yellow);
+            border: 3px solid var(--black);
+            border-radius: 5px;
+            box-shadow: 3px 3px 0 var(--black);
+            font-family: "Archivo Black", sans-serif;
+            font-size: 10px;
+            transform: rotate(4deg);
+        }
 
-.side-box:nth-of-type(2) {
-    background: var(--lavender);
-    box-shadow: 5px 5px 0 var(--blue);
-}
+        .category {
+            display: inline-block;
+            padding: 5px 9px;
+            color: var(--white);
+            background: var(--muted);
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
 
-.sidebar strong {
-    color: var(--muted);
-    font-family: "Archivo Black", sans-serif;
-    font-size: 13px;
-    text-transform: uppercase;
-}
+        .news-card h3 {
+            margin: 15px 0 8px;
+            color: var(--black);
+            font-family: "Archivo Black", sans-serif;
+            font-size: 19px;
+            line-height: 1.5;
+            text-transform: uppercase;
+        }
 
-.sidebar p, .sidebar li { font-size: 12px; }
+        .news-card h3 a {
+            color: var(--black);
+        }
 
-.sidebar ol { padding-left: 20px; }
-.sidebar li { margin-bottom: 10px; }
+        .news-card h3 a:hover {
+            color: #648C29;
+        }
 
-.sidebar a {
-    color: var(--muted);
-    font-weight: 600;
-    transition: .2s;
-}
+        .tanggal {
+            margin: 0 0 14px;
+            color: var(--muted);
+            font-size: 12px;
+            font-weight: 700;
+            text-align: right;
+        }
 
-.sidebar a:hover {
-    color: #648C29;
-    text-decoration: underline;
-}
+        .news-card p.description {
+            color: #414052;
+            font-size: 14px;
+            line-height: 1.8;
+            text-align: left;
+        }
 
-.sidebar hr {
-    margin: 20px 0;
-    border-top: 3px dashed var(--purple);
-}
+        .selanjutnya {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 9px 14px;
+            color: var(--black) !important;
+            background: var(--blue);
+            border: 3px solid var(--black);
+            border-radius: 6px;
+            box-shadow: 4px 4px 0 var(--purple);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: .2s ease;
+        }
 
-.sticker-box {
-    padding: 15px 10px;
-    color: var(--white);
-    background: var(--purple);
-    border: 3px solid var(--black);
-    border-radius: 10px;
-    box-shadow: 5px 5px 0 var(--blue);
-    text-align: center;
-}
+        .selanjutnya:hover {
+            color: var(--white) !important;
+            background: var(--muted);
+            text-decoration: none;
+            transform: translate(3px, 3px);
+            box-shadow: 1px 1px 0 var(--black);
+        }
 
-.sticker-box .star {
-    color: var(--yellow);
-    font-size: 30px;
-    text-shadow: 3px 3px 0 var(--black);
-}
+        /* SIDEBAR */
 
-.sticker-box h3 {
-    margin: 6px 0;
-    color: var(--white);
-    font-family: "Archivo Black", sans-serif;
-    font-size: 17px;
-    text-shadow: 2px 2px 0 var(--black);
-}
+        .sidebar {
+            width: 25%;
+            padding: 19px;
+            background: var(--ice);
+            border-left: 4px double var(--purple);
+            line-height: 1.7;
+            overflow-wrap: anywhere;
+        }
 
-.sticker-box p { font-size: 11px; }
+        .side-box {
+            margin-bottom: 22px;
+            padding: 15px;
+            background: var(--yellow);
+            border: 3px solid var(--black);
+            border-radius: 10px;
+            box-shadow: 5px 5px 0 var(--purple);
+        }
 
-.footer {
-    padding: 23px 15px;
-    color: var(--yellow);
-    background: var(--black);
-    border-top: 5px solid var(--blue);
-    text-align: center;
-}
+        .side-box:nth-of-type(2) {
+            background: var(--lavender);
+            box-shadow: 5px 5px 0 var(--blue);
+        }
 
-.footer h3 {
-    margin: 0 0 8px;
-    color: var(--blue);
-    font-family: "Archivo Black", sans-serif;
-    font-size: 17px;
-    letter-spacing: 2px;
-}
+        .sidebar strong {
+            color: var(--muted);
+            font-family: "Archivo Black", sans-serif;
+            font-size: 13px;
+            text-transform: uppercase;
+        }
 
-.footer p { margin: 5px 0; font-size: 11px; }
-.footer .heart { color: var(--pink); }
-.footer .copyright { color: #D2D0E8; }
+        .sidebar p {
+            font-size: 12px;
+        }
 
-@media screen and (max-width: 700px) {
-    body {
-        padding: 15px 9px;
-        background-size: 65px 65px, 85px 85px, 100% 100%;
-    }
+        .sidebar ol {
+            padding-left: 20px;
+        }
 
-    .site-wrapper {
-        box-shadow: 5px 5px 0 var(--black), 8px 8px 0 var(--yellow);
-    }
+        .sidebar li {
+            margin-bottom: 10px;
+            font-size: 12px;
+        }
 
-    .header { padding: 34px 12px; }
-    .header h1 { font-size: 34px; }
-    .header::before { left: 3%; font-size: 38px; }
-    .header::after { right: 3%; font-size: 48px; }
+        .sidebar a {
+            color: var(--muted);
+            font-weight: 600;
+            transition: .2s;
+        }
 
-    .navbar { gap: 8px; padding: 13px 8px; }
-    .navbar a { padding: 9px 10px; font-size: 10px; }
-    .mini-banner { justify-content: center; }
+        .sidebar a:hover {
+            color: #648C29;
+            text-decoration: underline;
+        }
 
-    .layout-row {
-        display: flex;
-        flex-direction: column;
-    }
+        .sidebar hr {
+            margin: 20px 0;
+            border-top: 3px dashed var(--purple);
+        }
 
-    .content, .sidebar { width: 100%; }
-    .content { padding: 20px 15px; }
-    .content h2 { font-size: 21px; }
+        .sticker-box {
+            padding: 15px 10px;
+            color: var(--white);
+            background: var(--purple);
+            border: 3px solid var(--black);
+            border-radius: 10px;
+            box-shadow: 5px 5px 0 var(--blue);
+            text-align: center;
+        }
 
-    .sidebar {
-        border-left: none;
-        border-top: 4px double var(--purple);
-    }
-}
-</style>
+        .sticker-box .star {
+            color: var(--yellow);
+            font-size: 30px;
+            text-shadow: 3px 3px 0 var(--black);
+        }
+
+        .sticker-box h3 {
+            margin: 6px 0;
+            color: var(--white);
+            font-family: "Archivo Black", sans-serif;
+            font-size: 17px;
+            text-shadow: 2px 2px 0 var(--black);
+        }
+
+        .sticker-box p {
+            font-size: 11px;
+        }
+
+        /* FOOTER */
+
+        .footer {
+            padding: 23px 15px;
+            color: var(--yellow);
+            background: var(--black);
+            border-top: 5px solid var(--blue);
+            text-align: center;
+        }
+
+        .footer h3 {
+            margin: 0 0 8px;
+            color: var(--blue);
+            font-family: "Archivo Black", sans-serif;
+            font-size: 17px;
+            letter-spacing: 2px;
+        }
+
+        .footer p {
+            margin: 5px 0;
+            font-size: 11px;
+        }
+
+        .footer .heart {
+            color: var(--pink);
+        }
+
+        .footer .copyright {
+            color: #D2D0E8;
+        }
+
+        /* RESPONSIVE HP */
+
+        @media screen and (max-width: 700px) {
+            body {
+                padding: 15px 9px;
+                background-size: 65px 65px, 85px 85px, 100% 100%;
+            }
+
+            .site-wrapper {
+                box-shadow:
+                    5px 5px 0 var(--black),
+                    8px 8px 0 var(--yellow);
+            }
+
+            .header {
+                padding: 34px 12px;
+            }
+
+            .header h1 {
+                font-size: 34px;
+            }
+
+            .header::before {
+                left: 3%;
+                font-size: 38px;
+            }
+
+            .header::after {
+                right: 3%;
+                font-size: 48px;
+            }
+
+            .navbar {
+                gap: 8px;
+                padding: 13px 8px;
+            }
+
+            .navbar a {
+                padding: 9px 10px;
+                font-size: 10px;
+            }
+
+            .mini-banner {
+                justify-content: center;
+            }
+
+            .layout-row {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .content,
+            .sidebar {
+                width: 100%;
+            }
+
+            .content {
+                padding: 20px 15px;
+            }
+
+            .content h2 {
+                font-size: 21px;
+            }
+
+            .news-card {
+                padding: 18px 14px;
+            }
+
+            .news-card h3 {
+                font-size: 17px;
+            }
+
+            .sidebar {
+                border-left: none;
+                border-top: 4px double var(--purple);
+            }
+        }
+    </style>
 </head>
 
 <body>
+
 <div class="site-wrapper">
 
     <div class="ticker">
@@ -480,20 +611,32 @@ hr {
     </div>
 
     <table>
+
+        <!-- HEADER -->
         <tr>
             <td colspan="2" class="header">
-                <span class="eyebrow">✦ PERSONAL WEBSITE · EST. 2026 ✦</span>
-                <h1>SEKOLAHKU!</h1>
-                <p><em>My school, my journey ♡</em></p>
+
+                <span class="eyebrow">
+                    ✦ PERSONAL WEBSITE · EST. 2026 ✦
+                </span>
+
+                <h1>WEBSITE<br>STEFANIE!</h1>
+
+                <p>
+                    <em>Berbagi cerita, karya, dan pengalaman ♡</em>
+                </p>
+
             </td>
         </tr>
 
+        <!-- NAVIGASI -->
         <tr>
             <td colspan="2" style="padding:0;">
+
                 <nav class="navbar">
-                    <a href="index.html">★ Beranda</a>
+                    <a href="index.html" class="active">★ Beranda</a>
                     <a href="tentangsaya.html">♡ Tentang Saya</a>
-                    <a href="sekolahku.html" class="active">✦ Sekolahku</a>
+                    <a href="sekolahku.html">✦ Sekolahku</a>
                     <a href="syair.html">♫ Syair Lagu</a>
                     <a href="berita1.html">★ Berita 1</a>
                     <a href="berita2.html">✧ Berita 2</a>
@@ -504,125 +647,212 @@ hr {
                     <span>CHROME DREAMS!</span>
                     <span>♡ GOOD VIBES ONLY ♡</span>
                 </div>
+
             </td>
         </tr>
 
+        <!-- KONTEN UTAMA -->
         <tr class="layout-row">
+
             <td class="content">
+
                 <h2>
-                    Welcome to my school!
-                    <span class="heading-label">SCHOOL LIFE</span>
+                    Welcome to my world!
+                    <span class="heading-label">HELLO!</span>
                 </h2>
 
-                <div class="school-banner">
-                    <div class="school-symbol">SMK</div>
-                    <h3>SMK NEGERI 1 TANGERANG</h3>
-                    <p>Tempat belajar, berkarya, dan mengembangkan potensi diri.</p>
-                </div>
-
                 <p>
-                    SMKN 1 Tangerang merupakan sekolah tempatku menempuh
-                    pendidikan dan mendapatkan berbagai pengalaman.
-                    Di sekolah, aku belajar mengembangkan kemampuan,
-                    menambah pengetahuan, serta mengenal banyak hal baru.
-                </p>
-
-                <p>
-                    Selain belajar di kelas, lingkungan sekolah juga
-                    memberikan kesempatan untuk berorganisasi, bekerja
-                    sama dengan teman, dan belajar bertanggung jawab.
+                    Website ini berisi informasi tentang saya, sekolah,
+                    syair lagu, dan berita seputar kegiatan di
+                    SMKN 1 Tangerang. Explore my little corner
+                    of the internet! ★
                 </p>
 
                 <hr>
 
                 <h2>
-                    ★ School Information
-                    <span class="heading-label">MY SCHOOL</span>
+                    ★ Berita Terbaru
+                    <span class="heading-label">HOT NEWS</span>
                 </h2>
 
-                <div class="info-card">
-                    <h3>Nama Sekolah</h3>
-                    <p>SMK Negeri 1 Tangerang</p>
-                </div>
+                <!-- BERITA 1 -->
+                <article class="news-card">
 
-                <div class="info-card">
-                    <h3>Jenjang Pendidikan</h3>
-                    <p>Sekolah Menengah Kejuruan (SMK).</p>
-                </div>
+                    <span class="sticker">★ BIG WIN!</span>
 
-                <div class="info-card">
-                    <h3>Jurusan</h3>
-                    <p>Desain Komunikasi Visual (DKV).</p>
-                </div>
+                    <span class="category">
+                        SPORTS ★ ACHIEVEMENT
+                    </span>
 
-                <div class="info-card">
-                    <h3>Kelas</h3>
-                    <p>XI DKV 2.</p>
-                </div>
+                    <h3>
+                        <a href="berita/berita-1.html">
+                            Prestasi PERBASI - Juara 3 Putri Basket
+                        </a>
+                    </h3>
 
-                <hr>
-
-                <h2>
-                    ★ My School Journey
-                    <span class="heading-label">EXPERIENCE</span>
-                </h2>
-
-                <p>
-                    Bagiku, masa sekolah bukan hanya tentang pelajaran,
-                    tetapi juga tentang pengalaman, pertemanan, dan
-                    proses mengembangkan diri. Aku ingin terus belajar,
-                    mencoba hal baru, dan memanfaatkan kesempatan yang
-                    ada untuk menjadi pribadi yang lebih baik.
-                </p>
-
-                <div class="highlight-card">
-                    <h3>LEARN • CREATE • GROW</h3>
-                    <p>
-                        Setiap hari adalah kesempatan untuk menambah
-                        pengalaman, mengembangkan kreativitas, dan
-                        belajar sesuatu yang baru.
+                    <p class="tanggal">
+                        ★ September 2026
                     </p>
-                </div>
+
+                    <p class="description">
+                        Tim basket putri SMKN 1 Tangerang berhasil meraih
+                        Juara 3 dalam kompetisi basket yang
+                        diselenggarakan oleh PERBASI.
+                        Prestasi ini menjadi kebanggaan bagi sekolah
+                        dan bukti semangat kerja sama serta perjuangan
+                        para anggota tim.
+                    </p>
+
+                    <a class="selanjutnya"
+                       href="berita/berita-1.html">
+                        Selanjutnya ↗
+                    </a>
+
+                </article>
+
+                <!-- BERITA 2 -->
+                <article class="news-card">
+
+                    <span class="sticker">✦ SCHOOL LIFE</span>
+
+                    <span class="category">
+                        SCHOOL ★ UPDATE
+                    </span>
+
+                    <h3>
+                        <a href="berita/berita-2.html">
+                            PJJ 7–11 September 2026
+                        </a>
+                    </h3>
+
+                    <p class="tanggal">
+                        ★ September 2026
+                    </p>
+
+                    <p class="description">
+                        SMKN 1 Tangerang melaksanakan Pembelajaran
+                        Jarak Jauh pada tanggal 7–11 September 2026.
+                        Salah satu materi yang dipelajari adalah
+                        mengenai abu vulkanik. Kegiatan pembelajaran
+                        tetap menjadi kesempatan untuk menambah
+                        pengetahuan dan pengalaman baru.
+                    </p>
+
+                    <a class="selanjutnya"
+                       href="berita/berita-2.html">
+                        Selanjutnya ↗
+                    </a>
+
+                </article>
+
             </td>
 
+            <!-- SIDEBAR -->
             <td class="sidebar">
+
                 <div class="side-box">
-                    <p><strong>✿ Tentang Saya</strong></p>
-                    <p><strong>Nama:</strong><br>Stefanie Odelia Akay</p>
-                    <p><strong>Kelas:</strong><br>XI DKV 2</p>
-                    <p><strong>Sekolah:</strong><br>SMKN 1 Tangerang</p>
+
+                    <p>
+                        <strong>✿ Tentang Saya</strong>
+                    </p>
+
+                    <p>
+                        <strong>Nama:</strong><br>
+                        Stefanie Odelia Akay
+                    </p>
+
+                    <p>
+                        <strong>Kelas:</strong><br>
+                        XI DKV 2
+                    </p>
+
+                    <p>
+                        <strong>Sekolah:</strong><br>
+                        SMKN 1 Tangerang
+                    </p>
+
                 </div>
 
                 <div class="side-box">
-                    <p><strong>★ Quick Menu</strong></p>
+
+                    <p>
+                        <strong>★ Quick Menu</strong>
+                    </p>
+
                     <ol>
-                        <li><a href="index.html">Beranda</a></li>
-                        <li><a href="tentangsaya.html">Profil Saya</a></li>
-                        <li><a href="syair.html">Syair Lagu</a></li>
-                        <li><a href="berita1.html">Berita Basket</a></li>
-                        <li><a href="berita2.html">Berita PJJ</a></li>
+                        <li>
+                            <a href="tentang-saya.html">
+                                Profil Saya
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="sekolahku.html">
+                                Sekolahku
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="syair-lagu.html">
+                                Syair Lagu
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="berita/berita-1.html">
+                                Berita Basket
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="berita/berita-2.html">
+                                Berita PJJ
+                            </a>
+                        </li>
                     </ol>
+
                 </div>
 
                 <div class="sticker-box">
+
                     <div class="star">✦ ★ ✦</div>
+
                     <h3>STAY COOL!</h3>
-                    <p>DREAM BIG.<br>WORK HARD.<br>SHINE ON. ♡</p>
+
+                    <p>
+                        DREAM BIG.<br>
+                        WORK HARD.<br>
+                        SHINE ON. ♡
+                    </p>
+
                 </div>
+
+            </td>
+
+        </tr>
+
+        <!-- FOOTER -->
+        <tr>
+            <td colspan="2" class="footer">
+
+                <h3>STEFANIE'S WORLD ★</h3>
+
+                <p>
+                    Made with <span class="heart">♥</span>
+                    and positive vibes.
+                </p>
+
+                <p class="copyright">
+                    &copy; 2026 Stefanie Odelia Akay.
+                    All rights reserved.
+                </p>
+
             </td>
         </tr>
 
-        <tr>
-            <td colspan="2" class="footer">
-                <h3>STEFANIE'S WORLD ★</h3>
-                <p>Made with <span class="heart">♥</span> and positive vibes.</p>
-                <p class="copyright">
-                    &copy; 2026 Stefanie Odelia Akay. All rights reserved.
-                </p>
-            </td>
-        </tr>
     </table>
+
 </div>
+
 </body>
 </html>
-```
