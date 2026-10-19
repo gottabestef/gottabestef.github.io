@@ -1,858 +1,420 @@
+```html
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Stefanie ★ Y2K Chrome</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tentang Saya - Stefanie</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <style>
-        :root {
-            --pink: #C8B6FF;
-            --blue: #9BE7FF;
-            --yellow: #D9FF70;
-            --purple: #A9A0D8;
-            --black: #29283D;
-            --white: #F7F7FF;
-            --lavender: #F0ECFF;
-            --ice: #E5F8FF;
-            --muted: #7770A8;
-        }
+<style>
+:root {
+    --pink: #C8B6FF;
+    --blue: #9BE7FF;
+    --yellow: #D9FF70;
+    --purple: #A9A0D8;
+    --black: #29283D;
+    --white: #F7F7FF;
+    --lavender: #F0ECFF;
+    --ice: #E5F8FF;
+    --muted: #7770A8;
+}
 
-        * {
-            box-sizing: border-box;
-        }
+* {
+    box-sizing: border-box;
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
+body {
+    margin: 0;
+    padding: 35px 16px;
+    color: var(--black);
+    font-family: "Space Grotesk", Arial, sans-serif;
+    background-color: #B9B1E8;
+    background-image:
+        radial-gradient(circle, #F7F7FF 0 5px, transparent 6px),
+        radial-gradient(circle, #91DDF2 0 5px, transparent 6px),
+        repeating-linear-gradient(
+            45deg,
+            transparent 0 30px,
+            rgba(41, 40, 61, 0.08) 31px 34px,
+            transparent 35px 60px
+        );
+    background-size: 75px 75px, 100px 100px, 100% 100%;
+    background-attachment: fixed;
+}
 
-        body {
-            margin: 0;
-            padding: 35px 16px;
-            color: var(--black);
-            font-family: "Space Grotesk", Arial, sans-serif;
-            background-color: #B9B1E8;
-            background-image:
-                radial-gradient(circle, #F7F7FF 0 5px, transparent 6px),
-                radial-gradient(circle, #91DDF2 0 5px, transparent 6px),
-                repeating-linear-gradient(
-                    45deg,
-                    transparent 0 30px,
-                    rgba(41, 40, 61, 0.08) 31px 34px,
-                    transparent 35px 60px
-                );
-            background-size: 75px 75px, 100px 100px, 100% 100%;
-            background-attachment: fixed;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        /* KOTAK UTAMA */
-
-        .site-wrapper {
-            width: 100%;
-            max-width: 1050px;
-            margin: auto;
-            overflow: hidden;
-            background: var(--white);
-            border: 4px solid var(--black);
-            border-radius: 18px;
-            box-shadow:
-                10px 10px 0 var(--black),
+.wrapper {
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+    background: var(--white);
+    border: 4px solid var(--black);
+    border-radius: 18px;
+    box-shadow: 10px 10px 0 var(--black),
                 15px 15px 0 var(--yellow);
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            border-spacing: 0;
-            table-layout: fixed;
-        }
-
-        td {
-            padding: 0;
-            vertical-align: top;
-        }
-
-        /* TOP TICKER */
-
-        .ticker {
-            padding: 10px;
-            color: var(--black);
-            background: var(--yellow);
-            border-bottom: 4px solid var(--black);
-            font-family: "Archivo Black", sans-serif;
-            font-size: 11px;
-            letter-spacing: 2px;
-            text-align: center;
-        }
-
-        /* HEADER */
-
-        .header {
-            position: relative;
-            overflow: hidden;
-            padding: 43px 20px;
-            color: var(--white);
-            text-align: center;
-            background-color: #B9A7F5;
-            background-image:
-                radial-gradient(circle, #F7F7FF 0 4px, transparent 5px),
-                linear-gradient(135deg, #C8B6FF, #8DDCF5, #A9A0D8);
-            background-size: 55px 55px, cover;
-            border-bottom: 6px double var(--yellow);
-        }
-
-        .header::before {
-            content: "★";
-            position: absolute;
-            top: 12px;
-            left: 7%;
-            color: var(--yellow);
-            font-size: 60px;
-            text-shadow: 4px 4px 0 var(--black);
-            transform: rotate(-15deg);
-        }
-
-        .header::after {
-            content: "✦";
-            position: absolute;
-            right: 7%;
-            bottom: 5px;
-            color: var(--blue);
-            font-size: 75px;
-            text-shadow: 4px 4px 0 var(--black);
-            transform: rotate(15deg);
-        }
-
-        .eyebrow {
-            position: relative;
-            z-index: 1;
-            display: inline-block;
-            padding: 7px 13px;
-            color: var(--black);
-            background: var(--yellow);
-            border: 3px solid var(--black);
-            border-radius: 5px;
-            box-shadow: 4px 4px 0 var(--black);
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            transform: rotate(-2deg);
-        }
-
-        .header h1 {
-            position: relative;
-            z-index: 1;
-            margin: 20px 0 10px;
-            color: var(--white);
-            font-family: "Archivo Black", Impact, sans-serif;
-            font-size: clamp(36px, 7vw, 65px);
-            line-height: 1.15;
-            letter-spacing: -1px;
-            text-transform: uppercase;
-            -webkit-text-stroke: 1px var(--black);
-            text-shadow:
-                3px 3px 0 var(--muted),
-                5px 5px 0 var(--black),
-                8px 8px 0 var(--blue);
-        }
-
-        .header p {
-            position: relative;
-            z-index: 1;
-            display: inline-block;
-            margin: 8px 0 0;
-            padding: 9px 14px;
-            color: var(--black);
-            background: var(--white);
-            border: 3px solid var(--black);
-            border-radius: 7px;
-            box-shadow: 4px 4px 0 var(--black);
-            font-size: 13px;
-            font-weight: 700;
-            transform: rotate(1deg);
-        }
-
-        /* NAVIGASI */
-
-        .navbar {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            padding: 17px 12px;
-            background: var(--yellow);
-            border-bottom: 4px solid var(--black);
-        }
-
-        .navbar a {
-            display: inline-block;
-            padding: 10px 13px;
-            color: var(--black);
-            background: var(--white);
-            border: 3px solid var(--muted);
-            border-radius: 6px;
-            box-shadow: 4px 4px 0 var(--black);
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            transition: .2s ease;
-        }
-
-        .navbar a:hover,
-        .navbar a.active {
-            color: var(--white);
-            background: var(--purple);
-            transform: translate(3px, 3px);
-            box-shadow: 1px 1px 0 var(--black);
-        }
-
-        /* BANNER */
-
-        .mini-banner {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 10px;
-            padding: 12px;
-            color: var(--yellow);
-            background: var(--black);
-            font-family: "Archivo Black", sans-serif;
-            font-size: 10px;
-            letter-spacing: 1px;
-            text-align: center;
-        }
-
-        .mini-banner span:nth-child(2) {
-            color: var(--pink);
-        }
-
-        .mini-banner span:nth-child(3) {
-            color: var(--blue);
-        }
-
-        /* LAYOUT KONTEN */
-
-        .layout-row {
-            display: table-row;
-        }
-
-        .content {
-            width: 75%;
-            padding: 26px;
-            background: var(--white);
-            line-height: 1.8;
-        }
-
-        .content h2 {
-            margin: 5px 0 22px;
-            padding-bottom: 12px;
-            color: var(--muted);
-            border-bottom: 4px solid var(--blue);
-            font-family: "Archivo Black", sans-serif;
-            font-size: 24px;
-            text-transform: uppercase;
-        }
-
-        .heading-label {
-            display: inline-block;
-            margin-left: 5px;
-            padding: 5px 8px;
-            vertical-align: middle;
-            color: var(--black);
-            background: var(--yellow);
-            border: 2px solid var(--black);
-            border-radius: 4px;
-            font-family: "Space Grotesk", sans-serif;
-            font-size: 10px;
-        }
-
-        .content h3 {
-            color: var(--muted);
-        }
-
-        .content > p {
-            font-size: 14px;
-        }
-
-        .content a {
-            color: var(--muted);
-        }
-
-        .content a:hover {
-            color: #648C29;
-        }
-
-        hr {
-            margin: 28px 0;
-            border: none;
-            border-top: 3px dashed var(--purple);
-        }
-
-        /* KARTU BERITA */
-
-        .news-card {
-            position: relative;
-            margin: 0 5px 28px 0;
-            padding: 21px;
-            background: var(--lavender);
-            border: 3px solid var(--black);
-            border-radius: 12px;
-            box-shadow: 6px 6px 0 var(--blue);
-            transition: .2s ease;
-        }
-
-        .news-card:nth-of-type(even) {
-            background: var(--ice);
-            box-shadow: 6px 6px 0 var(--purple);
-        }
-
-        .news-card:hover {
-            transform: translate(-3px, -3px);
-            box-shadow: 10px 10px 0 var(--blue);
-        }
-
-        .sticker {
-            position: absolute;
-            top: -14px;
-            right: 13px;
-            padding: 5px 10px;
-            color: var(--black);
-            background: var(--yellow);
-            border: 3px solid var(--black);
-            border-radius: 5px;
-            box-shadow: 3px 3px 0 var(--black);
-            font-family: "Archivo Black", sans-serif;
-            font-size: 10px;
-            transform: rotate(4deg);
-        }
-
-        .category {
-            display: inline-block;
-            padding: 5px 9px;
-            color: var(--white);
-            background: var(--muted);
-            border-radius: 4px;
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-
-        .news-card h3 {
-            margin: 15px 0 8px;
-            color: var(--black);
-            font-family: "Archivo Black", sans-serif;
-            font-size: 19px;
-            line-height: 1.5;
-            text-transform: uppercase;
-        }
-
-        .news-card h3 a {
-            color: var(--black);
-        }
-
-        .news-card h3 a:hover {
-            color: #648C29;
-        }
-
-        .tanggal {
-            margin: 0 0 14px;
-            color: var(--muted);
-            font-size: 12px;
-            font-weight: 700;
-            text-align: right;
-        }
-
-        .news-card p.description {
-            color: #414052;
-            font-size: 14px;
-            line-height: 1.8;
-            text-align: left;
-        }
-
-        .selanjutnya {
-            display: inline-block;
-            margin-top: 8px;
-            padding: 9px 14px;
-            color: var(--black) !important;
-            background: var(--blue);
-            border: 3px solid var(--black);
-            border-radius: 6px;
-            box-shadow: 4px 4px 0 var(--purple);
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            transition: .2s ease;
-        }
-
-        .selanjutnya:hover {
-            color: var(--white) !important;
-            background: var(--muted);
-            text-decoration: none;
-            transform: translate(3px, 3px);
-            box-shadow: 1px 1px 0 var(--black);
-        }
-
-        /* SIDEBAR */
-
-        .sidebar {
-            width: 25%;
-            padding: 19px;
-            background: var(--ice);
-            border-left: 4px double var(--purple);
-            line-height: 1.7;
-            overflow-wrap: anywhere;
-        }
-
-        .side-box {
-            margin-bottom: 22px;
-            padding: 15px;
-            background: var(--yellow);
-            border: 3px solid var(--black);
-            border-radius: 10px;
-            box-shadow: 5px 5px 0 var(--purple);
-        }
-
-        .side-box:nth-of-type(2) {
-            background: var(--lavender);
-            box-shadow: 5px 5px 0 var(--blue);
-        }
-
-        .sidebar strong {
-            color: var(--muted);
-            font-family: "Archivo Black", sans-serif;
-            font-size: 13px;
-            text-transform: uppercase;
-        }
-
-        .sidebar p {
-            font-size: 12px;
-        }
-
-        .sidebar ol {
-            padding-left: 20px;
-        }
-
-        .sidebar li {
-            margin-bottom: 10px;
-            font-size: 12px;
-        }
-
-        .sidebar a {
-            color: var(--muted);
-            font-weight: 600;
-            transition: .2s;
-        }
-
-        .sidebar a:hover {
-            color: #648C29;
-            text-decoration: underline;
-        }
-
-        .sidebar hr {
-            margin: 20px 0;
-            border-top: 3px dashed var(--purple);
-        }
-
-        .sticker-box {
-            padding: 15px 10px;
-            color: var(--white);
-            background: var(--purple);
-            border: 3px solid var(--black);
-            border-radius: 10px;
-            box-shadow: 5px 5px 0 var(--blue);
-            text-align: center;
-        }
-
-        .sticker-box .star {
-            color: var(--yellow);
-            font-size: 30px;
-            text-shadow: 3px 3px 0 var(--black);
-        }
-
-        .sticker-box h3 {
-            margin: 6px 0;
-            color: var(--white);
-            font-family: "Archivo Black", sans-serif;
-            font-size: 17px;
-            text-shadow: 2px 2px 0 var(--black);
-        }
-
-        .sticker-box p {
-            font-size: 11px;
-        }
-
-        /* FOOTER */
-
-        .footer {
-            padding: 23px 15px;
-            color: var(--yellow);
-            background: var(--black);
-            border-top: 5px solid var(--blue);
-            text-align: center;
-        }
-
-        .footer h3 {
-            margin: 0 0 8px;
-            color: var(--blue);
-            font-family: "Archivo Black", sans-serif;
-            font-size: 17px;
-            letter-spacing: 2px;
-        }
-
-        .footer p {
-            margin: 5px 0;
-            font-size: 11px;
-        }
-
-        .footer .heart {
-            color: var(--pink);
-        }
-
-        .footer .copyright {
-            color: #D2D0E8;
-        }
-
-        /* RESPONSIVE HP */
-
-        @media screen and (max-width: 700px) {
-            body {
-                padding: 15px 9px;
-                background-size: 65px 65px, 85px 85px, 100% 100%;
-            }
-
-            .site-wrapper {
-                box-shadow:
-                    5px 5px 0 var(--black),
-                    8px 8px 0 var(--yellow);
-            }
-
-            .header {
-                padding: 34px 12px;
-            }
-
-            .header h1 {
-                font-size: 34px;
-            }
-
-            .header::before {
-                left: 3%;
-                font-size: 38px;
-            }
-
-            .header::after {
-                right: 3%;
-                font-size: 48px;
-            }
-
-            .navbar {
-                gap: 8px;
-                padding: 13px 8px;
-            }
-
-            .navbar a {
-                padding: 9px 10px;
-                font-size: 10px;
-            }
-
-            .mini-banner {
-                justify-content: center;
-            }
-
-            .layout-row {
-                display: flex;
-                flex-direction: column;
-            }
-
-            .content,
-            .sidebar {
-                width: 100%;
-            }
-
-            .content {
-                padding: 20px 15px;
-            }
-
-            .content h2 {
-                font-size: 21px;
-            }
-
-            .news-card {
-                padding: 18px 14px;
-            }
-
-            .news-card h3 {
-                font-size: 17px;
-            }
-
-            .sidebar {
-                border-left: none;
-                border-top: 4px double var(--purple);
-            }
-        }
-    </style>
+}
+
+.ticker {
+    padding: 10px;
+    text-align: center;
+    background: var(--yellow);
+    border-bottom: 4px solid var(--black);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+header {
+    padding: 38px 20px;
+    text-align: center;
+    background:
+        radial-gradient(circle, #F7F7FF 0 4px, transparent 5px),
+        linear-gradient(135deg, #C8B6FF, #8DDCF5, #A9A0D8);
+    background-size: 55px 55px, cover;
+    border-bottom: 6px double var(--yellow);
+}
+
+.tag {
+    display: inline-block;
+    padding: 7px 12px;
+    background: var(--yellow);
+    border: 3px solid var(--black);
+    border-radius: 5px;
+    box-shadow: 3px 3px 0 var(--black);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+header h1 {
+    margin: 18px 0 12px;
+    color: var(--white);
+    font-family: "Archivo Black", sans-serif;
+    font-size: clamp(35px, 7vw, 60px);
+    text-shadow: 4px 4px 0 var(--muted),
+                 7px 7px 0 var(--black);
+}
+
+header p {
+    display: inline-block;
+    padding: 8px 13px;
+    background: var(--white);
+    border: 3px solid var(--black);
+    border-radius: 7px;
+    font-weight: 700;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px;
+    background: var(--blue);
+    border-bottom: 4px solid var(--black);
+}
+
+nav a {
+    padding: 9px 13px;
+    color: var(--black);
+    background: var(--white);
+    border: 2px solid var(--black);
+    border-radius: 5px;
+    box-shadow: 3px 3px 0 var(--black);
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+nav a:hover,
+nav a.active {
+    background: var(--yellow);
+    transform: translateY(-2px);
+}
+
+main {
+    padding: 25px;
+}
+
+.label {
+    display: inline-block;
+    margin-bottom: 18px;
+    padding: 7px 11px;
+    background: var(--yellow);
+    border: 2px solid var(--black);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.intro {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 22px;
+    align-items: stretch;
+}
+
+.profile-card {
+    display: flex;
+    min-height: 280px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    background: linear-gradient(145deg, var(--pink), var(--blue));
+    border: 3px solid var(--black);
+    border-radius: 12px;
+    box-shadow: 5px 5px 0 var(--black);
+}
+
+.profile-icon {
+    display: flex;
+    width: 125px;
+    height: 125px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    background: var(--white);
+    border: 4px solid var(--black);
+    border-radius: 50%;
+    font-family: "Archivo Black", sans-serif;
+    font-size: 38px;
+    box-shadow: 4px 4px 0 var(--purple);
+}
+
+.profile-card h2 {
+    margin: 0 0 8px;
+    font-size: 19px;
+}
+
+.profile-card p {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.about-card {
+    padding: 25px;
+    background: white;
+    border: 3px solid var(--black);
+    border-radius: 12px;
+    box-shadow: 5px 5px 0 var(--black);
+}
+
+.about-card h2,
+.section-title {
+    margin-top: 0;
+    font-family: "Archivo Black", sans-serif;
+    font-size: 24px;
+}
+
+.about-card p {
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.section {
+    margin-top: 30px;
+}
+
+.section-title {
+    display: inline-block;
+    padding: 10px 14px;
+    background: var(--pink);
+    border: 3px solid var(--black);
+    box-shadow: 4px 4px 0 var(--black);
+}
+
+.interests {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 12px;
+}
+
+.interest-card {
+    padding: 18px;
+    background: var(--ice);
+    border: 3px solid var(--black);
+    border-radius: 9px;
+    transition: 0.2s;
+}
+
+.interest-card:nth-child(2) {
+    background: var(--lavender);
+}
+
+.interest-card:nth-child(3) {
+    background: #F4F9D9;
+}
+
+.interest-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 4px 4px 0 var(--black);
+}
+
+.interest-card h3 {
+    margin: 0 0 9px;
+    font-size: 16px;
+}
+
+.interest-card p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.quote {
+    margin-top: 28px;
+    padding: 22px;
+    text-align: center;
+    background: var(--yellow);
+    border: 3px solid var(--black);
+    border-radius: 10px;
+    box-shadow: 5px 5px 0 var(--black);
+    font-family: "Archivo Black", sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+footer {
+    margin-top: 30px;
+    padding: 20px 12px;
+    text-align: center;
+    background: var(--pink);
+    border-top: 4px solid var(--black);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+footer p {
+    margin: 5px;
+}
+
+@media (max-width: 650px) {
+    body {
+        padding: 18px 10px;
+    }
+
+    main {
+        padding: 16px;
+    }
+
+    .intro {
+        grid-template-columns: 1fr;
+    }
+
+    .interests {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
 </head>
 
 <body>
 
-<div class="site-wrapper">
+<div class="wrapper">
 
     <div class="ticker">
-        ★ WELCOME TO STEFANIE'S WORLD ★ Y2K FOREVER ★
+        ★ WELCOME TO MY LITTLE CORNER OF THE INTERNET ★
     </div>
 
-    <table>
+    <header>
+        <span class="tag">GET TO KNOW ME</span>
+        <h1>ABOUT ME</h1>
+        <p>A little introduction about myself</p>
+    </header>
 
-        <!-- HEADER -->
-        <tr>
-            <td colspan="2" class="header">
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="tentangsaya.html" class="active">TENTANG SAYA</a>
+        <a href="sekolahku.html">SEKOLAHKU</a>
+        <a href="syair.html">SYAIR LAGU</a>
+        <a href="berita1.html">BERITA 1</a>
+        <a href="berita2.html">BERITA 2</a>
+    </nav>
 
-                <span class="eyebrow">
-                    ✦ PERSONAL WEBSITE · EST. 2026 ✦
-                </span>
+    <main>
+        <span class="label">HELLO, NICE TO MEET YOU!</span>
 
-                <h1>WEBSITE<br>STEFANIE!</h1>
+        <section class="intro">
+            <div class="profile-card">
+                <div class="profile-icon">SA</div>
+                <h2>Stefanie Odelia Akay</h2>
+                <p>XI DKV 2 · SMKN 1 Tangerang</p>
+            </div>
 
-                <p>
-                    <em>Berbagi cerita, karya, dan pengalaman ♡</em>
-                </p>
-
-            </td>
-        </tr>
-
-        <!-- NAVIGASI -->
-        <tr>
-            <td colspan="2" style="padding:0;">
-
-                <nav class="navbar">
-                    <a href="index.html" class="active">★ Beranda</a>
-                    <a href="tentangsaya.html">♡ Tentang Saya</a>
-                    <a href="sekolahku.html">✦ Sekolahku</a>
-                    <a href="syair.html">♫ Syair Lagu</a>
-                    <a href="berita1.html">★ Berita 1</a>
-                    <a href="berita2.html">✧ Berita 2</a>
-                </nav>
-
-                <div class="mini-banner">
-                    <span>★ FUNKY ZONE ★</span>
-                    <span>CHROME DREAMS!</span>
-                    <span>♡ GOOD VIBES ONLY ♡</span>
-                </div>
-
-            </td>
-        </tr>
-
-        <!-- KONTEN UTAMA -->
-        <tr class="layout-row">
-
-            <td class="content">
-
-                <h2>
-                    Welcome to my world!
-                    <span class="heading-label">HELLO!</span>
-                </h2>
+            <div class="about-card">
+                <h2>Who Am I?</h2>
 
                 <p>
-                    Website ini berisi informasi tentang saya, sekolah,
-                    syair lagu, dan berita seputar kegiatan di
-                    SMKN 1 Tangerang. Explore my little corner
-                    of the internet! ★
+                    Hai! Aku Stefanie Odelia Akay, siswi kelas XI DKV 2
+                    di SMKN 1 Tangerang. Aku orang yang suka mencoba
+                    hal baru dan punya berbagai minat yang ingin terus
+                    aku kembangkan.
                 </p>
-
-                <hr>
-
-                <h2>
-                    ★ Berita Terbaru
-                    <span class="heading-label">HOT NEWS</span>
-                </h2>
-
-                <!-- BERITA 1 -->
-                <article class="news-card">
-
-                    <span class="sticker">★ BIG WIN!</span>
-
-                    <span class="category">
-                        SPORTS ★ ACHIEVEMENT
-                    </span>
-
-                    <h3>
-                        <a href="berita/berita-1.html">
-                            Prestasi PERBASI - Juara 3 Putri Basket
-                        </a>
-                    </h3>
-
-                    <p class="tanggal">
-                        ★ September 2026
-                    </p>
-
-                    <p class="description">
-                        Tim basket putri SMKN 1 Tangerang berhasil meraih
-                        Juara 3 dalam kompetisi basket yang
-                        diselenggarakan oleh PERBASI.
-                        Prestasi ini menjadi kebanggaan bagi sekolah
-                        dan bukti semangat kerja sama serta perjuangan
-                        para anggota tim.
-                    </p>
-
-                    <a class="selanjutnya"
-                       href="berita/berita-1.html">
-                        Selanjutnya ↗
-                    </a>
-
-                </article>
-
-                <!-- BERITA 2 -->
-                <article class="news-card">
-
-                    <span class="sticker">✦ SCHOOL LIFE</span>
-
-                    <span class="category">
-                        SCHOOL ★ UPDATE
-                    </span>
-
-                    <h3>
-                        <a href="berita/berita-2.html">
-                            PJJ 7–11 September 2026
-                        </a>
-                    </h3>
-
-                    <p class="tanggal">
-                        ★ September 2026
-                    </p>
-
-                    <p class="description">
-                        SMKN 1 Tangerang melaksanakan Pembelajaran
-                        Jarak Jauh pada tanggal 7–11 September 2026.
-                        Salah satu materi yang dipelajari adalah
-                        mengenai abu vulkanik. Kegiatan pembelajaran
-                        tetap menjadi kesempatan untuk menambah
-                        pengetahuan dan pengalaman baru.
-                    </p>
-
-                    <a class="selanjutnya"
-                       href="berita/berita-2.html">
-                        Selanjutnya ↗
-                    </a>
-
-                </article>
-
-            </td>
-
-            <!-- SIDEBAR -->
-            <td class="sidebar">
-
-                <div class="side-box">
-
-                    <p>
-                        <strong>✿ Tentang Saya</strong>
-                    </p>
-
-                    <p>
-                        <strong>Nama:</strong><br>
-                        Stefanie Odelia Akay
-                    </p>
-
-                    <p>
-                        <strong>Kelas:</strong><br>
-                        XI DKV 2
-                    </p>
-
-                    <p>
-                        <strong>Sekolah:</strong><br>
-                        SMKN 1 Tangerang
-                    </p>
-
-                </div>
-
-                <div class="side-box">
-
-                    <p>
-                        <strong>★ Quick Menu</strong>
-                    </p>
-
-                    <ol>
-                        <li>
-                            <a href="tentang-saya.html">
-                                Profil Saya
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="sekolahku.html">
-                                Sekolahku
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="syair-lagu.html">
-                                Syair Lagu
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="berita/berita-1.html">
-                                Berita Basket
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="berita/berita-2.html">
-                                Berita PJJ
-                            </a>
-                        </li>
-                    </ol>
-
-                </div>
-
-                <div class="sticker-box">
-
-                    <div class="star">✦ ★ ✦</div>
-
-                    <h3>STAY COOL!</h3>
-
-                    <p>
-                        DREAM BIG.<br>
-                        WORK HARD.<br>
-                        SHINE ON. ♡
-                    </p>
-
-                </div>
-
-            </td>
-
-        </tr>
-
-        <!-- FOOTER -->
-        <tr>
-            <td colspan="2" class="footer">
-
-                <h3>STEFANIE'S WORLD ★</h3>
 
                 <p>
-                    Made with <span class="heart">♥</span>
-                    and positive vibes.
+                    Aku suka menggambar, cosplay, menjahit, olahraga,
+                    serta hal-hal yang berhubungan dengan K-pop dan
+                    budaya Korea. Aku juga tertarik dengan ilmu
+                    Kebumian dan senang belajar hal baru.
                 </p>
 
-                <p class="copyright">
-                    &copy; 2026 Stefanie Odelia Akay.
-                    All rights reserved.
+                <p>
+                    Bagiku, setiap pengalaman bisa menjadi kesempatan
+                    untuk belajar, berkembang, dan mengenal diri sendiri
+                    lebih jauh.
                 </p>
+            </div>
+        </section>
 
-            </td>
-        </tr>
+        <section class="section">
+            <h2 class="section-title">MY INTERESTS</h2>
 
-    </table>
+            <div class="interests">
+                <div class="interest-card">
+                    <h3>Art & Creativity</h3>
+                    <p>
+                        Menggambar, desain, cosplay, dan menjahit
+                        adalah beberapa kegiatan kreatif yang aku sukai.
+                    </p>
+                </div>
+
+                <div class="interest-card">
+                    <h3>K-pop & Korea</h3>
+                    <p>
+                        Aku tertarik dengan musik K-pop, bahasa Korea,
+                        dan budaya Korea.
+                    </p>
+                </div>
+
+                <div class="interest-card">
+                    <h3>Science & Sports</h3>
+                    <p>
+                        Aku suka olahraga dan tertarik mempelajari
+                        ilmu Kebumian serta fenomena alam.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div class="quote">
+            "Keep learning, keep creating, and keep growing."
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 STEFANIE ODELIA AKAY</p>
+        <p>MADE WITH CREATIVITY & PIXEL MAGIC</p>
+    </footer>
 
 </div>
 
 </body>
 </html>
+```
