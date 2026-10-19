@@ -1,10 +1,10 @@
-```html
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Berita 2 - PJJ akibat Abu Vulkanik</title>
+<title>Berita 1 - Prestasi PERBASI</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
@@ -182,47 +182,27 @@ nav a.active {
     font-weight: 600;
 }
 
-.hero-card {
-    position: relative;
+.article-image {
     display: flex;
-    min-height: 230px;
-    margin-bottom: 22px;
+    min-height: 190px;
+    margin-bottom: 20px;
     padding: 25px;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
     text-align: center;
     background:
-        radial-gradient(circle, rgba(247,247,255,.9) 0 4px, transparent 5px),
+        radial-gradient(circle, rgba(247,247,255,.9) 0 5px, transparent 6px),
         linear-gradient(135deg, #C8B6FF, #9BE7FF, #D9FF70);
     background-size: 45px 45px, cover;
     border: 3px solid var(--black);
     border-radius: 8px;
 }
 
-.hero-card .small-title {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 3px;
-}
-
-.hero-card h3 {
-    margin: 14px 0;
+.article-image span {
     font-family: "Archivo Black", sans-serif;
-    font-size: clamp(28px, 5vw, 44px);
-    line-height: 1.2;
+    font-size: clamp(25px, 5vw, 43px);
+    line-height: 1.3;
     text-shadow: 3px 3px 0 var(--white);
-}
-
-.hero-card .date {
-    display: inline-block;
-    padding: 7px 12px;
-    background: var(--white);
-    border: 2px solid var(--black);
-    border-radius: 5px;
-    font-size: 12px;
-    font-weight: 700;
 }
 
 .article-body {
@@ -235,14 +215,7 @@ nav a.active {
     margin: 0 0 16px;
 }
 
-.highlight {
-    margin: 20px 0;
-    padding: 16px;
-    background: var(--ice);
-    border-left: 5px solid var(--muted);
-}
-
-.info-card {
+.achievement {
     margin-top: 22px;
     padding: 18px;
     background: var(--lavender);
@@ -251,18 +224,18 @@ nav a.active {
     box-shadow: 4px 4px 0 var(--pink);
 }
 
-.info-card h3 {
+.achievement h3 {
     margin: 0 0 12px;
     font-family: "Archivo Black", sans-serif;
     font-size: 18px;
 }
 
-.info-card ul {
+.achievement ul {
     margin: 0;
     padding-left: 20px;
 }
 
-.info-card li {
+.achievement li {
     margin-bottom: 7px;
 }
 
@@ -313,16 +286,9 @@ nav a.active {
     line-height: 1.6;
 }
 
-.article-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: space-between;
-    margin-top: 24px;
-}
-
-.article-links a {
+.next-article {
     display: inline-block;
+    margin-top: 8px;
     padding: 10px 13px;
     color: var(--black);
     background: var(--yellow);
@@ -334,8 +300,9 @@ nav a.active {
     text-decoration: none;
 }
 
-.article-links a:hover {
+.next-article:hover {
     background: var(--blue);
+    transform: translateY(-2px);
 }
 
 footer {
@@ -374,13 +341,13 @@ footer p {
 <div class="site-wrapper">
 
     <div class="ticker">
-        ★ SCHOOL NEWS ★ LEARNING UPDATE ★
+        ★ SCHOOL ACHIEVEMENT ★ PERBASI BASKETBALL COMPETITION ★
     </div>
 
     <header class="header">
         <span class="eyebrow">MY PERSONAL WEBSITE</span>
-        <h1>BERITA 02</h1>
-        <p>Informasi Kegiatan Sekolah</p>
+        <h1>BERITA 01</h1>
+        <p>Prestasi SMKN 1 Tangerang</p>
     </header>
 
     <nav>
@@ -388,134 +355,94 @@ footer p {
         <a href="tentangsaya.html">TENTANG SAYA</a>
         <a href="sekolahku.html">SEKOLAHKU</a>
         <a href="syair.html">SYAIR LAGU</a>
-        <a href="berita1.html">BERITA 1</a>
-        <a href="berita2.html" class="active">BERITA 2</a>
+        <a href="berita1.html" class="active">BERITA 1</a>
+        <a href="berita2.html">BERITA 2</a>
     </nav>
 
     <main class="content">
 
         <section>
-            <span class="section-label">SCHOOL NEWS / 02</span>
+            <span class="section-label">SPORTS ACHIEVEMENT / 01</span>
 
             <article class="article">
 
                 <div class="article-top">
-                    <span class="eyebrow">SCHOOL UPDATE</span>
-
-                    <h2>Pembelajaran Jarak Jauh akibat Abu Vulkanik</h2>
-
+                    <span class="eyebrow">BASKETBALL • PERBASI</span>
+                    <h2>Juara 3 Putri Basket pada Kompetisi PERBASI</h2>
                     <div class="meta">
-                        SEPTEMBER 2026 · SMKN 1 TANGERANG
+                        September 2026 · Prestasi Sekolah
                     </div>
                 </div>
 
                 <div class="article-body">
 
-                    <div class="hero-card">
-                        <span class="small-title">LEARNING UPDATE / 2026</span>
-                        <h3>LEARNING<br>FROM HOME</h3>
-                        <span class="date">7–11 SEPTEMBER 2026</span>
+                    <div class="article-image">
+                        <span>3RD PLACE<br>GIRLS BASKETBALL</span>
                     </div>
 
                     <p>
-                        SMKN 1 Tangerang melaksanakan
-                        <strong>Pembelajaran Jarak Jauh (PJJ)</strong>
-                        pada tanggal <strong>7–11 September 2026</strong>
-                        akibat kondisi abu vulkanik. Kebijakan ini membuat
-                        siswa mengikuti kegiatan pembelajaran dari tempat
-                        masing-masing.
+                        Tim basket putri SMKN 1 Tangerang berhasil meraih
+                        <strong>Juara 3</strong> dalam kompetisi basket
+                        yang diselenggarakan oleh PERBASI.
                     </p>
 
                     <p>
-                        Selama PJJ berlangsung, siswa mengikuti
-                        pembelajaran secara daring dengan mempelajari
-                        materi dan mengerjakan tugas yang diberikan oleh
-                        guru. Kegiatan belajar tetap dilaksanakan sesuai
-                        jadwal yang telah ditentukan.
+                        Prestasi tersebut menjadi salah satu pencapaian
+                        yang membanggakan bagi sekolah. Para pemain
+                        menunjukkan kerja sama, semangat, dan perjuangan
+                        selama mengikuti pertandingan.
                     </p>
 
-                    <div class="highlight">
-                        Meskipun pembelajaran dilakukan dari jarak jauh,
-                        siswa tetap diharapkan mengikuti kegiatan dengan
-                        disiplin, menyelesaikan tugas, dan mengumpulkannya
-                        sesuai ketentuan yang diberikan.
-                    </div>
+                    <p>
+                        Keberhasilan ini juga menjadi hasil dari latihan
+                        dan kerja sama tim yang dilakukan sebelum
+                        pertandingan. Dukungan dari sekolah, pelatih,
+                        dan teman-teman turut memberikan semangat kepada
+                        para pemain.
+                    </p>
 
-                    <div class="info-card">
-                        <h3>Pelaksanaan PJJ</h3>
-
+                    <div class="achievement">
+                        <h3>✦ Pencapaian</h3>
                         <ul>
-                            <li>
-                                <strong>Tanggal:</strong>
-                                7–11 September 2026
-                            </li>
-                            <li>
-                                <strong>Penyebab:</strong>
-                                Kondisi abu vulkanik
-                            </li>
-                            <li>
-                                <strong>Metode:</strong>
-                                Pembelajaran Jarak Jauh
-                            </li>
-                            <li>
-                                <strong>Kegiatan:</strong>
-                                Pembelajaran daring dan pengerjaan tugas
-                            </li>
+                            <li>Kompetisi basket PERBASI</li>
+                            <li>Kategori putri</li>
+                            <li>Meraih Juara 3</li>
+                            <li>Membawa nama SMKN 1 Tangerang</li>
                         </ul>
                     </div>
 
-                    <div class="article-links">
-                        <a href="berita1.html">← BERITA SEBELUMNYA</a>
-                        <a href="index.html">KEMBALI KE HOME</a>
-                    </div>
+                    <a class="next-article" href="berita2.html">
+                        Baca Berita Selanjutnya →
+                    </a>
 
                 </div>
             </article>
         </section>
 
-        <aside>
+        <aside class="sidebar">
 
             <div class="sidebar-box">
-                <h3>INFO BERITA</h3>
-
-                <p>
-                    <strong>Topik</strong><br>
-                    Pembelajaran Jarak Jauh
-                </p>
-
-                <p>
-                    <strong>Periode</strong><br>
-                    7–11 September 2026
-                </p>
-
-                <p>
-                    <strong>Penyebab</strong><br>
-                    Kondisi abu vulkanik
-                </p>
-
-                <p>
-                    <strong>Sekolah</strong><br>
-                    SMKN 1 Tangerang
-                </p>
+                <h3>★ INFO PRESTASI</h3>
+                <p><strong>Kompetisi:</strong><br>PERBASI</p>
+                <p><strong>Kategori:</strong><br>Basket Putri</p>
+                <p><strong>Peringkat:</strong><br>Juara 3</p>
+                <p><strong>Sekolah:</strong><br>SMKN 1 Tangerang</p>
+                <p><strong>Waktu:</strong><br>September 2026</p>
             </div>
 
             <div class="sidebar-box">
-                <h3>KEGIATAN PJJ</h3>
-
+                <h3>✦ NILAI TIM</h3>
                 <ul>
-                    <li>Mengikuti pembelajaran daring.</li>
-                    <li>Mempelajari materi dari guru.</li>
-                    <li>Mengerjakan tugas yang diberikan.</li>
-                    <li>Mengumpulkan tugas sesuai ketentuan.</li>
+                    <li>Kerja sama</li>
+                    <li>Semangat berjuang</li>
+                    <li>Disiplin berlatih</li>
+                    <li>Sportivitas</li>
                 </ul>
             </div>
 
             <div class="sticker">
-                <strong>KEEP LEARNING!</strong>
-                <p>
-                    Tetap belajar dan semangat
-                    meskipun dari jarak jauh.
-                </p>
+                <strong>TEAMWORK!</strong>
+                <p>One team, one goal, one achievement.</p>
             </div>
 
         </aside>
@@ -524,7 +451,7 @@ footer p {
 
     <footer>
         <p>© 2026 STEFANIE ODELIA AKAY</p>
-        <p>MADE WITH CREATIVITY & PIXEL MAGIC</p>
+        <p>MADE WITH CREATIVITY & A LITTLE BIT OF PIXEL MAGIC</p>
     </footer>
 
 </div>
